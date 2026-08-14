@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Matrícula</title>
+
+    <style>
+       </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Ficha de Matrícula</h1>
+
+    <p>Preencha todos os campos.</p>
+
+    <h2>Dados do Aluno</h2>
+
+    <label>Nome</label>
+    <input id="nome" maxlength="100">
+
+    <label>Data de nascimento</label>
+    <input type="date" id="nascimento">
+
+    <label>CPF</label>
+    <input id="cpf" maxlength="11" inputmode="numeric">
+
+    <label>RG</label>
+    <input id="rg" maxlength="9" inputmode="numeric">
+
+    <label>Sexo</label>
+    <select id="sexo">
+        <option value="">Selecione</option>
+        <option>Feminino</option>
+        <option>Masculino</option>
+        <option>Outro</option>
+    </select>
+
+
+    <h2>Contato</h2>
+
+    <label>E-mail</label>
+    <input type="email" id="email" maxlength="100">
+
+    <label>Telefone</label>
+    <input id="telefone" maxlength="11" inputmode="numeric">
+
+
+    <h2>Endereço</h2>
+
+    <label>CEP</label>
+    <input id="cep" maxlength="8" inputmode="numeric">
+
+    <label>Rua</label>
+    <input id="rua" maxlength="100">
+
+    <label>Número</label>
+    <input id="numero" maxlength="10">
+
+    <label>Bairro</label>
+    <input id="bairro" maxlength="60">
+
+    <label>Cidade</label>
+    <input id="cidade" maxlength="60">
+
+    <label>Estado</label>
+    <select id="estado">
+        <option value="">Selecione</option>
+        <option>AC</option>
+        <option>AL</option>
+        <option>AP</option>
+        <option>AM</option>
+        <option>BA</option>
+        <option>CE</option>
+        <option>DF</option>
+        <option>ES</option>
+        <option>GO</option>
+        <option>MA</option>
+        <option>MT</option>
+        <option>MS</option>
+        <option>MG</option>
+        <option>PA</option>
+        <option>PB</option>
+        <option>PR</option>
+        <option>PE</option>
+        <option>PI</option>
+        <option>RJ</option>
+        <option>RN</option>
+        <option>RS</option>
+        <option>RO</option>
+        <option>RR</option>
+        <option>SC</option>
+        <option>SP</option>
+        <option>SE</option>
+        <option>TO</option>
+    </select>
+
+
+    <h2>Dados Escolares</h2>
+
+    <label>Série</label>
+    <select id="serie">
+        <option value="">Selecione</option>
+        <option>6º Ano</option>
+        <option>7º Ano</option>
+        <option>8º Ano</option>
+        <option>9º Ano</option>
+        <option>1º Ano do Ensino Médio</option>
+        <option>2º Ano do Ensino Médio</option>
+        <option>3º Ano do Ensino Médio</option>
+    </select>
+
+    <label>Turno</label>
+    <select id="turno">
+        <option value="">Selecione</option>
+        <option>Manhã</option>
+        <option>Tarde</option>
+        <option>Noite</option>
+    </select>
+
+    <label>Escola anterior</label>
+    <input id="escola" maxlength="100">
+
+
+    <h2>Responsável</h2>
+
+    <label>Nome</label>
+    <input id="responsavel" maxlength="100">
+
+    <label>CPF</label>
+    <input id="cpfResponsavel" maxlength="11" inputmode="numeric">
+
+    <label>Telefone</label>
+    <input id="telefoneResponsavel" maxlength="11" inputmode="numeric">
+
+    <label>Parentesco</label>
+    <select id="parentesco">
+        <option value="">Selecione</option>
+        <option>Pai</option>
+        <option>Mãe</option>
+        <option>Avô / Avó</option>
+        <option>Tutor</option>
+        <option>Outro</option>
+    </select>
+
+
+    <h2>Observações</h2>
+
+    <textarea id="observacoes" maxlength="500"></textarea>
+
+    <button onclick="enviar()">Finalizar Matrícula</button>
+
+    <p id="mensagem">Preencha todos os campos!</p>
+
+    <div id="concluido">
+        <strong>Matrícula concluída!</strong>
+        <p>Ficha preenchida com sucesso.</p>
+    </div>
+
+</div>
+
+
+<script>
+
+function enviar() {
+
+    let campos = document.querySelectorAll("input, select, textarea");
+    let tudoPreenchido = true;
+
+    for (let campo of campos) {
+        if (campo.value == "") {
+            tudoPreenchido = false;
+        }
+    }
+
+    if (tudoPreenchido) {
+        document.getElementById("mensagem").style.display = "none";
+        document.getElementById("concluido").style.display = "block";
+    } else {
+        document.getElementById("mensagem").style.display = "block";
+        document.getElementById("concluido").style.display = "none";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
